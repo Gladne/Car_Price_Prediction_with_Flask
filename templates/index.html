@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Title displayed on browser tab -->
+         <title>Car Price Predictor</title>
+        
+         <!-- Internal CSS Styling -->
+         <style>
+            /* Style applied to the whole webpage */
+            body{
+                font-family: Arial, sans-serif; /* Clean readable font */
+                background-color:#f2f2f2; /* Light grey background */
+                text-align:center; /* Center all content */
+            }
+
+            /* Main container box */
+            .container{
+                width:400px; /* Width of form box */
+                margin:auto; /* Center the box */
+                background:white; /* White background */
+                padding:25px; /* Space inside box */
+                border-radius:10px; /* Rounded corners */
+                box-shadow:0px 0px 10px grey; /* Light shadow */
+            }
+
+            /* Style for all input fields */
+            input, select{
+                width:90%; /* Input width */
+                padding:8px; /* Space inside input */
+                margin:8px; /* Space outside input */
+            }
+
+            /* Style for submit button */
+            button{
+                background-color:#2e8b57; /* Green color */
+                color:white; /* Text color */
+                padding:10px;
+                border:none;
+                width:95%;
+                font-size:16px;
+                border-radius:5px;
+                cursor:pointer; /* Cursor changes on hover */
+            }
+
+            /* Button hover effect */
+            button:hover{
+                background-color:#1e6f46;
+            }
+
+         </style> 
+
+    </head>
+
+    <body>
+
+        <!-- Main form container -->
+         <div class="container">
+
+            <!-- Page heading -->
+             <h2>🚗 Used Car Price Predictor</h2>
+
+            <!-- Form sends data to Flask /predict route -->
+            <form action="/predict" method="post">
+                <!-- Kilometer input -->
+                <!-- User enters how many kms the car has been driven -->
+                <label>Kilometers Driven</label><br>
+                <input type="number" name="kms" placeholder="Enter kilometers driven" required>
+
+                <!-- Car age input -->
+                <label>Car Age (Years)</label><br>
+                <input type="number" name="age" placeholder="Enter car age" required>
+
+                <!-- Original car price -->
+                <label>Original Price (Rs)</label><br>
+                <input type="number" name="price" placeholder="Enter original price" required>
+
+                <!-- Fuel type dropdown -->
+                <label>Fuel Type</label><br>
+                <select name="fuel">
+                    <!-- Dropdown options -->
+                    <option value="Petrol">Petrol</option>
+                    <option value="Diesel">Diesel</option>
+                    <option value="CNG">CNG</option>
+                    <option value="Other">Other</option>
+                </select><br><br>
+
+                <!-- Transmission selection using radio buttons -->
+                <label>Transmission</label><br>
+                <input type="radio" name="transmission" value="Manual" required> Manual
+                <input type="radio" name="transmission" value="Automatic"> Automatic
+                <br><br>
+
+                <!-- Submit button to send data -->
+                 <button type="submit">Predict Price</button>
+            </form>
+        </div>
+    </body>
+</html>
