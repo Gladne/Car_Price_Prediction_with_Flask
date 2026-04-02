@@ -24,7 +24,7 @@ def home():
 @app.route('/predict', methods=['POST'])
 def predict():
     # Get form values entered by user
-    kms = float(request.form['kms'])                # kilimeters driven
+    kms = float(request.form['kms'])                # kilometers driven
     age = float(request.form['age'])                # car age
     original_price = float(request.form['price'])   # original car price
     fuel_type = request.form['fuel']                # fuel type selected
